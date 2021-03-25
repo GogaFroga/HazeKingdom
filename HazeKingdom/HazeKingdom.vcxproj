@@ -115,11 +115,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="market_system.cpp" />
+    <ClCompile Include="settlement_class.cpp" />
     <ClCompile Include="player_class.cpp" />
+    <ClCompile Include="save_maker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="player_class.h" />
+    <ClInclude Include="settlement_class.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
