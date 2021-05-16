@@ -18,7 +18,7 @@ class Player
 
         void set_posision(int, int);		// SET player coordinates
 
-        QString get_nickname();			// GET nickname
+        QString get_nickname();             // GET nickname
 
         float get_money_amount();			// GET money
 
@@ -28,7 +28,7 @@ class Player
 
         int get_posision();					// GET player coordinates
 
-        int get_item_amount();
+        unsigned int get_item_amount(unsigned int);
 
         int add_item(unsigned int, unsigned int);			// ADD item
 

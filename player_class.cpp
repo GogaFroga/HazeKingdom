@@ -55,6 +55,12 @@ int Player::get_posision()
     return(_x, _y);
 }
 
+unsigned int Player::get_item_amount(unsigned int index)
+{
+    int amount = inventory[index][0];
+    return(amount);
+}
+
 int Player::add_item(unsigned int index, unsigned int amount)
 {
     //сделать лимит
@@ -69,3 +75,4 @@ int Player::delete_item(unsigned int index, unsigned int amount)
     else
         return(-1);
 }
+

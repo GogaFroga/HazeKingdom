@@ -9,23 +9,38 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    dialog.cpp \
     main.cpp \
+    mainmenu.cpp \
     player_class.cpp \
-    settlement_class.cpp
+    settlement_class.cpp \
+    tradescene.cpp
 
 HEADERS += \
-    dialog.h \
+    mainmenu.h \
     player_class.h \
-    settlement_class.h
+    settlement_class.h \
+    tradescene.h
+
+FORMS += \
+    mainmenu.ui \
+    tradescene.ui
 
 TRANSLATIONS += \
-    Haze_ru_RU.ts
+    Course_ru_RU.ts
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+
 FORMS += \
-    dialog.ui
+    mainmenu.ui
+
+TRANSLATIONS += \
+    Course_ru_RU.ts
+
+# Default rules for deployment.
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target

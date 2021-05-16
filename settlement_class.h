@@ -81,3 +81,4 @@ class Market	// local settlement market
         float _item_deafolt_price[items_amount] = { 100, 40, 20, 2 };
         float _item_weight[items_amount] = { 10, 30, 15, 2 };
 };
+
