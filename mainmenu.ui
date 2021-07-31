@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>mainmenu</class>
  <widget class="QDialog" name="mainmenu">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,9 +20,9 @@
    <property name="geometry">
     <rect>
      <x>300</x>
-     <y>90</y>
-     <width>151</width>
-     <height>31</height>
+     <y>60</y>
+     <width>200</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="text">
@@ -27,77 +30,59 @@
    </property>
   </widget>
   <widget class="QPushButton" name="About">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>300</x>
-     <y>160</y>
-     <width>151</width>
-     <height>51</height>
+     <y>150</y>
+     <width>200</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="text">
     <string>About</string>
    </property>
+   <property name="autoDefault">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="exit">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>300</x>
      <y>240</y>
-     <width>161</width>
-     <height>61</height>
+     <width>200</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="text">
     <string>Exit</string>
    </property>
   </widget>
-  <widget class="QLabel" name="author">
+  <widget class="QTextBrowser" name="rules">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>20</x>
      <y>330</y>
-     <width>261</width>
-     <height>91</height>
+     <width>751</width>
+     <height>261</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>24</pointsize>
-    </font>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="frameShape">
     <enum>QFrame::NoFrame</enum>
    </property>
-   <property name="frameShadow">
-    <enum>QFrame::Plain</enum>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QFrame" name="frame">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>460</y>
-     <width>120</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="cursor">
-    <cursorShape>ArrowCursor</cursorShape>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::WinPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
    <property name="lineWidth">
-    <number>5</number>
-   </property>
-   <property name="midLineWidth">
     <number>0</number>
    </property>
   </widget>

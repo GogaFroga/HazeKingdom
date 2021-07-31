@@ -27,16 +27,27 @@ mainmenu::~mainmenu()
 
 void mainmenu::on_pushButton_clicked()
 {
+    //mainmenu setGeometry;
+    //ui->mainmenu->setSizePolicy(Maximum);
+    //this::mainmenu->setsize();
 
-
-    QGraphicsScene *scene = new QGraphicsScene;
-    scene->setSceneRect(0, 0, 1920, 1080);
+    ui->pushButton->setGeometry(0, 0, 0, 0);
+    ui->About->setGeometry(0, 0, 0, 0);
+    ui->rules->setGeometry(0, 0, 0, 0);
+    ui->exit->setGeometry(0, 0, 0, 0);
+    //ui->exit->setEnabled(false);
+    //QGraphicsScene *scene = new QGraphicsScene;
+    //scene->setSceneRect(0, 0, 1920, 1080);
     //map  C:/Users/User/Documents/GitHub/HazeKingdom/Assets/Wmap
-    QGraphicsPixmapItem *item_map = new QGraphicsPixmapItem( QPixmap("C:/Users/User/Documents/Course/Assets/Wmap") );
+    //QGraphicsPixmapItem *item_map = new QGraphicsPixmapItem( QPixmap("Wmap.png") );
+    //QGraphicsPixmapItem *item_map = new QGraphicsPixmapItem(  );
+    //QImage *image = load("Wmap", "png");
+    //QImageReader();
 
-    scene->addItem(item_map);
-    set_data(scene);
-    //first settlement
+    //scene->addItem(item_map);
+    //set_data(scene);
+
+    /*/first settlement
     Settlement FirstSettlement;
     QPushButton* settlement1 = FirstSettlement.create_settlement(1, 0, market, "City1", 633, 310);
     scene->addWidget(settlement1);
@@ -44,22 +55,26 @@ void mainmenu::on_pushButton_clicked()
     Settlement SecondSettlement;
     QPushButton* settlement2 = SecondSettlement.create_settlement(1, 0, market, "City2", 1033, 320);
     scene->addWidget(settlement2);
+    */
 
-    QGraphicsView view(scene);
+    /*QGraphicsView view(scene);
     view.showMaximized();
-
-    mainmenu::close();
-
-    //_sleep(1000000);
-    //char a = getchar();
-    //view.show();
+    view.show(); */
+    //mainmenu::close();
 }
 
 void mainmenu::on_About_clicked()
 {
-    mainmenu::QObject author;
-
-    //"Вакуленко Артур М8О-111Б"
+    if (!ui->rules->isEnabled())
+    {
+        ui->rules->setEnabled(true);
+        ui->rules->setText("Автор: Вакуленко Артур М8О-111Б\nСуть: Вы перемещаетесь между городами и торгуете.\nБла-бла-бла.");
+    }
+    else if (ui->rules->isEnabled())
+    {
+        ui->rules->setEnabled(false);
+        ui->rules->setText("");
+    }
 }
 
 void mainmenu::on_exit_clicked()
@@ -68,6 +83,8 @@ void mainmenu::on_exit_clicked()
 }
 
 
+
+/*
 //setting character stats
 void mainmenu::set_data(QGraphicsScene* scene)
 {
@@ -127,3 +144,4 @@ void mainmenu::set_data(QGraphicsScene* scene)
     wheat->move(650, 0);
     scene->addWidget(wheat);
 }
+*/
