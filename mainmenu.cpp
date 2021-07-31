@@ -24,17 +24,33 @@ mainmenu::~mainmenu()
     delete ui;
 }
 
-
-void mainmenu::on_pushButton_clicked()
+void mainmenu::setup_all()
 {
-    //mainmenu setGeometry;
-    //ui->mainmenu->setSizePolicy(Maximum);
-    //this::mainmenu->setsize();
-
     ui->pushButton->setGeometry(0, 0, 0, 0);
     ui->About->setGeometry(0, 0, 0, 0);
     ui->rules->setGeometry(0, 0, 0, 0);
     ui->exit->setGeometry(0, 0, 0, 0);
+    setGeometry(0,0,1920,1080);
+    ui->setupUi(this);
+}
+
+
+void mainmenu::on_pushButton_clicked()
+{
+    setup_all();
+    QString imagename = "C:/Users/User/Documents/GitHub/HazeKingdom/Wmap.png";
+    QImage image(imagename);
+    QGraphicsScene* scene = new QGraphicsScene();
+    QGraphicsView* view = new QGraphicsView(scene);
+    QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
+    scene->addItem(item);
+    view->showMaximized();
+    view->show();
+
+
+    //ui->map->setGeometry(0, 0, 1920, 1080);
+    //ui->map->setEnabled(true);
+
     //ui->exit->setEnabled(false);
     //QGraphicsScene *scene = new QGraphicsScene;
     //scene->setSceneRect(0, 0, 1920, 1080);
@@ -45,7 +61,6 @@ void mainmenu::on_pushButton_clicked()
     //QImageReader();
 
     //scene->addItem(item_map);
-    //set_data(scene);
 
     /*/first settlement
     Settlement FirstSettlement;
@@ -57,11 +72,9 @@ void mainmenu::on_pushButton_clicked()
     scene->addWidget(settlement2);
     */
 
-    /*QGraphicsView view(scene);
-    view.showMaximized();
-    view.show(); */
     //mainmenu::close();
 }
+
 
 void mainmenu::on_About_clicked()
 {
@@ -83,9 +96,7 @@ void mainmenu::on_exit_clicked()
 }
 
 
-
-/*
-//setting character stats
+/*/setting character stats
 void mainmenu::set_data(QGraphicsScene* scene)
 {
     QLabel *nickname = new QLabel();

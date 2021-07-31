@@ -28,8 +28,10 @@ class mainmenu : public QDialog
     public:
         mainmenu(QWidget *parent = nullptr);
         ~mainmenu();
+        void setup_all();
 
-        void set_data(QGraphicsScene*);
+        //void set_data(QGraphicsScene*);
+        void set_data();
 
     private slots:
 
