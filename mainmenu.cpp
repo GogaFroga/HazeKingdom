@@ -17,66 +17,42 @@ mainmenu::mainmenu(QWidget *parent)
     , ui(new Ui::mainmenu)
 {
     ui->setupUi(this);
+    setGeometry(0,0,800,600);
+    ui->mainmenu_tab->hide();
+    ui->game_tab->hide();
+    ui->player_tab->hide();
 }
 
 mainmenu::~mainmenu()
 {
     delete ui;
 }
-
+/*
 void mainmenu::setup_all()
 {
-    ui->pushButton->setGeometry(0, 0, 0, 0);
-    ui->About->setGeometry(0, 0, 0, 0);
+    ui->start->setGeometry(0, 0, 0, 0);
+    ui->about->setGeometry(0, 0, 0, 0);
     ui->rules->setGeometry(0, 0, 0, 0);
     ui->exit->setGeometry(0, 0, 0, 0);
-    setGeometry(0,0,1920,1080);
     ui->setupUi(this);
-}
+}*/
 
 
-void mainmenu::on_pushButton_clicked()
+void mainmenu::on_start_clicked()
 {
-    setup_all();
-    QString imagename = "C:/Users/User/Documents/GitHub/HazeKingdom/Wmap.png";
+
+    QString imagename = "Wmap.jpg";
     QImage image(imagename);
     QGraphicsScene* scene = new QGraphicsScene();
     QGraphicsView* view = new QGraphicsView(scene);
     QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
     scene->addItem(item);
-    view->showMaximized();
     view->show();
-
-
-    //ui->map->setGeometry(0, 0, 1920, 1080);
-    //ui->map->setEnabled(true);
-
-    //ui->exit->setEnabled(false);
-    //QGraphicsScene *scene = new QGraphicsScene;
-    //scene->setSceneRect(0, 0, 1920, 1080);
-    //map  C:/Users/User/Documents/GitHub/HazeKingdom/Assets/Wmap
-    //QGraphicsPixmapItem *item_map = new QGraphicsPixmapItem( QPixmap("Wmap.png") );
-    //QGraphicsPixmapItem *item_map = new QGraphicsPixmapItem(  );
-    //QImage *image = load("Wmap", "png");
-    //QImageReader();
-
-    //scene->addItem(item_map);
-
-    /*/first settlement
-    Settlement FirstSettlement;
-    QPushButton* settlement1 = FirstSettlement.create_settlement(1, 0, market, "City1", 633, 310);
-    scene->addWidget(settlement1);
-    //second settlement
-    Settlement SecondSettlement;
-    QPushButton* settlement2 = SecondSettlement.create_settlement(1, 0, market, "City2", 1033, 320);
-    scene->addWidget(settlement2);
-    */
-
-    //mainmenu::close();
+    //setup_all();
 }
 
 
-void mainmenu::on_About_clicked()
+void mainmenu::on_about_clicked()
 {
     if (!ui->rules->isEnabled())
     {
@@ -94,6 +70,16 @@ void mainmenu::on_exit_clicked()
 {
     mainmenu::close();
 }
+
+
+/*/first settlement
+Settlement FirstSettlement;
+QPushButton* settlement1 = FirstSettlement.create_settlement(1, 0, market, "City1", 633, 310);
+scene->addWidget(settlement1);
+//second settlement
+Settlement SecondSettlement;
+QPushButton* settlement2 = SecondSettlement.create_settlement(1, 0, market, "City2", 1033, 320);
+scene->addWidget(settlement2);*/
 
 
 /*/setting character stats

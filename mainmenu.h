@@ -30,14 +30,13 @@ class mainmenu : public QDialog
         ~mainmenu();
         void setup_all();
 
-        //void set_data(QGraphicsScene*);
         void set_data();
 
     private slots:
 
-        void on_pushButton_clicked();
+        void on_start_clicked();
 
-        void on_About_clicked();
+        void on_about_clicked();
 
         void on_exit_clicked();
 
