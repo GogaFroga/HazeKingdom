@@ -16,41 +16,30 @@ mainmenu::mainmenu(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::mainmenu)
 {
+    setGeometry(0, 30, 920, 990);
     ui->setupUi(this);
-    setGeometry(0,0,800,600);
-    ui->mainmenu_tab->hide();
-    ui->game_tab->hide();
-    ui->player_tab->hide();
+    ui->tabWidget->setCurrentIndex(0);
 }
 
 mainmenu::~mainmenu()
 {
     delete ui;
 }
-/*
-void mainmenu::setup_all()
-{
-    ui->start->setGeometry(0, 0, 0, 0);
-    ui->about->setGeometry(0, 0, 0, 0);
-    ui->rules->setGeometry(0, 0, 0, 0);
-    ui->exit->setGeometry(0, 0, 0, 0);
-    ui->setupUi(this);
-}*/
-
 
 void mainmenu::on_start_clicked()
 {
-
     QString imagename = "Wmap.jpg";
     QImage image(imagename);
     QGraphicsScene* scene = new QGraphicsScene();
     QGraphicsView* view = new QGraphicsView(scene);
     QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
+    view->move(920, 0);
+    view->setGeometry(920, 35, 1000, 990);
+    ui->tabWidget->removeTab(0);
     scene->addItem(item);
     view->show();
-    //setup_all();
-}
 
+}
 
 void mainmenu::on_about_clicked()
 {
@@ -71,6 +60,45 @@ void mainmenu::on_exit_clicked()
     mainmenu::close();
 }
 
+void mainmenu::on_charactertab_clicked()
+{
+    ui->tabWidget->setCurrentIndex(1);
+    ui->tabWidget->setTabEnabled(1, true);
+    ui->tabWidget->setEnabled(true);
+    setup_all();
+}
+
+
+void mainmenu::on_gametab_clicked()
+{
+    ui->tabWidget->setCurrentIndex(0);
+    ui->tabWidget->setTabEnabled(0, true);
+    ui->tabWidget->setEnabled(true);
+}
+
+
+void mainmenu::setup_all()
+{
+    ui->nickname->setFrameStyle(QFrame::Panel | QFrame::Sunken);
+    player.set_nickname("DragonSlayer");
+    ui->nickname->setText( "Name: " + player.get_nickname() );
+    //ui->nickname->setAlignment(Qt::AlignLeft);
+    ui->money->setFrameStyle(QFrame::Panel | QFrame::Sunken);
+    ui->money->setText( "Money: " + QString::number(player.get_money_amount()) ); //td::to_string(player.get_money_amount()
+    ui->fame->setFrameStyle(QFrame::Panel | QFrame::Sunken);
+    ui->fame->setText( "Fame: " + QString::number(player.get_fame_amount()) );
+    ui->weight->setFrameStyle(QFrame::Panel | QFrame::Sunken);
+    ui->weight->setText( "Weight: " + QString::number(player.get_weight_amount()) );
+    ui->coalLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
+    ui->coalLabel->setText( "Coal: " + QString::number(player.get_item_amount(0)) );
+    ui->stoneLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
+    ui->stoneLabel->setText( "Stone: " + QString::number(player.get_item_amount(1)) );
+    ui->woodLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
+    ui->woodLabel->setText( "Wood: " + QString::number(player.get_item_amount(2)) );
+    ui->wheatLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
+    ui->wheatLabel->setText( "Wheat: " + QString::number(player.get_item_amount(3)) );
+}
+
 
 /*/first settlement
 Settlement FirstSettlement;
@@ -80,65 +108,3 @@ scene->addWidget(settlement1);
 Settlement SecondSettlement;
 QPushButton* settlement2 = SecondSettlement.create_settlement(1, 0, market, "City2", 1033, 320);
 scene->addWidget(settlement2);*/
-
-
-/*/setting character stats
-void mainmenu::set_data(QGraphicsScene* scene)
-{
-    QLabel *nickname = new QLabel();
-    nickname->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    nickname->setText( "Name: " + player.get_nickname() );
-    nickname->setAlignment(Qt::AlignLeft);
-    nickname->move(50, 0);
-    scene->addWidget(nickname);
-
-    QLabel *money = new QLabel();
-    money->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    money->setText( "Money: " + QString::number(player.get_money_amount()) ); //td::to_string(player.get_money_amount()
-    money->setAlignment(Qt::AlignLeft);
-    money->move(200, 0);
-    scene->addWidget(money);
-
-    QLabel *fame = new QLabel();
-    fame->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    fame->setText( "Fame: " + QString::number(player.get_fame_amount()) );
-    fame->setAlignment(Qt::AlignLeft);
-    fame->move(300, 0);
-    scene->addWidget(fame);
-
-    QLabel *weight = new QLabel();
-    weight->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    weight->setText( "Weight: " + QString::number(player.get_weight_amount()) );
-    weight->setAlignment(Qt::AlignLeft);
-    weight->move(400, 0);
-    scene->addWidget(weight);
-
-    QLabel *coal = new QLabel();
-    coal->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    coal->setText( "Coal: " + QString::number(player.get_item_amount(0)) );
-    coal->setAlignment(Qt::AlignLeft);
-    coal->move(470, 0);
-    scene->addWidget(coal);
-
-    QLabel *stone = new QLabel();
-    stone->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    stone->setText( "Stone: " + QString::number(player.get_item_amount(1)) );
-    stone->setAlignment(Qt::AlignLeft);
-    stone->move(530, 0);
-    scene->addWidget(stone);
-
-    QLabel *wood = new QLabel();
-    wood->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    wood->setText( "Wood: " + QString::number(player.get_item_amount(2)) );
-    wood->setAlignment(Qt::AlignLeft);
-    wood->move(590, 0);
-    scene->addWidget(wood);
-
-    QLabel *wheat = new QLabel();
-    wheat->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    wheat->setText( "Wheat: " + QString::number(player.get_item_amount(3)) );
-    wheat->setAlignment(Qt::AlignLeft);
-    wheat->move(650, 0);
-    scene->addWidget(wheat);
-}
-*/

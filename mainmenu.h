@@ -40,6 +40,10 @@ class mainmenu : public QDialog
 
         void on_exit_clicked();
 
+        void on_charactertab_clicked();
+
+        void on_gametab_clicked();
+
     private:
         Ui::mainmenu *ui;
 };

@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
+    <width>920</width>
     <height>1000</height>
    </rect>
   </property>
@@ -26,7 +26,10 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
+   </property>
+   <property name="tabsClosable">
+    <bool>true</bool>
    </property>
    <widget class="QWidget" name="mainmenu_tab">
     <property name="enabled">
@@ -116,11 +119,191 @@
     <attribute name="title">
      <string>Tab 2</string>
     </attribute>
+    <widget class="QPushButton" name="charactertab">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>170</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Character</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="player_tab">
     <attribute name="title">
      <string>Страница</string>
     </attribute>
+    <widget class="QLabel" name="nickname">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>120</y>
+       <width>320</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Thats ma text yooo</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="gametab">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>170</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Game</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="money">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>190</y>
+       <width>320</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Thats ma text yooo</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="fame">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>260</y>
+       <width>320</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Thats ma text yooo</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="weight">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>330</y>
+       <width>320</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Thats ma text yooo</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="coalLabel">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>400</y>
+       <width>320</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Thats ma text yooo</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="stoneLabel">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>470</y>
+       <width>320</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Thats ma text yooo</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="woodLabel">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>540</y>
+       <width>320</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Thats ma text yooo</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="wheatLabel">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>610</y>
+       <width>320</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Thats ma text yooo</string>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>
