@@ -16,9 +16,12 @@ class Settlement
 
         void set_settlement_property(unsigned short);
         unsigned short get_settlement_property();
+        QString get_settlement_property_name(unsigned short index);
 
         void set_settlement_situation(unsigned short);
         unsigned short get_settlement_situation();
+        QString get_settlement_situation_name(unsigned short index);
+        QString get_settlement_situation_text(unsigned short index);
 
         QPushButton* create_settlement(unsigned short, unsigned short, class Market, QString, int, int); // create (property, situation, name, x, y)
 

@@ -12,14 +12,12 @@ SOURCES += \
     main.cpp \
     mainmenu.cpp \
     player_class.cpp \
-    settlement_class.cpp \
-    tradescene.cpp
+    settlement_class.cpp
 
 HEADERS += \
     mainmenu.h \
     player_class.h \
-    settlement_class.h \
-    tradescene.h
+    settlement_class.h
 
 FORMS += \
     mainmenu.ui \

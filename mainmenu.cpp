@@ -11,10 +11,9 @@
 
 Market market;
 Player player;
+Settlement settlement;
 
-mainmenu::mainmenu(QWidget *parent)
-    : QDialog(parent)
-    , ui(new Ui::mainmenu)
+mainmenu::mainmenu(QWidget *parent): QDialog(parent), ui(new Ui::mainmenu)
 {
     setGeometry(0, 30, 920, 990);
     ui->setupUi(this);
@@ -28,6 +27,9 @@ mainmenu::~mainmenu()
 
 void mainmenu::on_start_clicked()
 {
+    player.set_nickname("DragonSlayer");
+    settlement.create_settlement(1, 2, market, "Namea", 10, 10);
+    setup_all();
     QString imagename = "Wmap.jpg";
     QImage image(imagename);
     QGraphicsScene* scene = new QGraphicsScene();
@@ -38,7 +40,6 @@ void mainmenu::on_start_clicked()
     ui->tabWidget->removeTab(0);
     scene->addItem(item);
     view->show();
-
 }
 
 void mainmenu::on_about_clicked()
@@ -68,6 +69,12 @@ void mainmenu::on_charactertab_clicked()
     setup_all();
 }
 
+void mainmenu::on_tradetab_clicked()
+{
+    ui->tabWidget->setCurrentIndex(2);
+    ui->tabWidget->setTabEnabled(2, true);
+    ui->tabWidget->setEnabled(true);
+}
 
 void mainmenu::on_gametab_clicked()
 {
@@ -76,13 +83,19 @@ void mainmenu::on_gametab_clicked()
     ui->tabWidget->setEnabled(true);
 }
 
+void mainmenu::on_gametab2_clicked()
+{
+    ui->tabWidget->setCurrentIndex(0);
+    ui->tabWidget->setTabEnabled(0, true);
+    ui->tabWidget->setEnabled(true);
+}
+
+//
 
 void mainmenu::setup_all()
 {
     ui->nickname->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    player.set_nickname("DragonSlayer");
     ui->nickname->setText( "Name: " + player.get_nickname() );
-    //ui->nickname->setAlignment(Qt::AlignLeft);
     ui->money->setFrameStyle(QFrame::Panel | QFrame::Sunken);
     ui->money->setText( "Money: " + QString::number(player.get_money_amount()) ); //td::to_string(player.get_money_amount()
     ui->fame->setFrameStyle(QFrame::Panel | QFrame::Sunken);
@@ -97,8 +110,15 @@ void mainmenu::setup_all()
     ui->woodLabel->setText( "Wood: " + QString::number(player.get_item_amount(2)) );
     ui->wheatLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
     ui->wheatLabel->setText( "Wheat: " + QString::number(player.get_item_amount(3)) );
-}
+    ui->cityLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
+    ui->cityLabel->setText( "Settlement: " + settlement.get_settlement_name() );
+    ui->classLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
+    ui->classLabel->setText( "Class: " + settlement.get_settlement_property_name(settlement.get_settlement_property()) );
+    ui->statusLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
+    ui->statusLabel->setText( "Status: " + settlement.get_settlement_situation_name(settlement.get_settlement_situation()) );
 
+
+}
 
 /*/first settlement
 Settlement FirstSettlement;

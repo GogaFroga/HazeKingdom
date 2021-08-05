@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>tradescene</class>
- <widget name="tradescene" class="QDialog">
-<property name="geometry">
+ <widget class="QDialog" name="tradescene">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -54,45 +55,6 @@
    </property>
    <property name="text">
     <string>Buy</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="Name">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>60</y>
-     <width>251</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Name: </string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="Situation">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>100</y>
-     <width>251</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Situation: </string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="Class">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>251</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Class: </string>
    </property>
   </widget>
   <widget class="QLabel" name="product_1">

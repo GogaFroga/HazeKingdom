@@ -25,6 +25,11 @@ unsigned short Settlement::get_settlement_property()
         return (Settlement::_settlement_property);
 }
 
+QString Settlement::get_settlement_property_name(unsigned short index)
+{
+        return (Settlement::_settlement_property_name[index]);
+}
+
 void Settlement::set_settlement_situation(unsigned short index)
 {
         Settlement::_settlement_situation = index;
@@ -33,6 +38,16 @@ void Settlement::set_settlement_situation(unsigned short index)
 unsigned short Settlement::get_settlement_situation()
 {
         return(Settlement::_settlement_situation);
+}
+
+QString Settlement::get_settlement_situation_name(unsigned short index)
+{
+        return (Settlement::_situation_name[index]);
+}
+
+QString Settlement::get_settlement_situation_text(unsigned short index)
+{
+        return (Settlement::_situation_text[index]);
 }
 
 QPushButton* Settlement::create_settlement(unsigned short property_index, unsigned short situation_index, class Market market, QString name, int x , int y)
