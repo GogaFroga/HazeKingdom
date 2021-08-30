@@ -20,8 +20,7 @@ HEADERS += \
     settlement_class.h
 
 FORMS += \
-    mainmenu.ui \
-    tradescene.ui
+    mainmenu.ui
 
 TRANSLATIONS += \
     Course_ru_RU.ts

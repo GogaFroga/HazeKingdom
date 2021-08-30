@@ -46,7 +46,21 @@ class mainmenu : public QDialog
 
         void on_gametab2_clicked();
 
+        void on_gametab3_clicked();
+
         void on_tradetab_clicked();
+
+        void on_movetab_clicked();
+
+        void on_move_button_clicked();
+
+        /*
+        void on_buy_button_clicked();
+
+        void on_sell_button_clicked();
+
+        void on_coal_button_clicked();
+        */
 
     private:
         Ui::mainmenu *ui;

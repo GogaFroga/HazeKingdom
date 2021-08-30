@@ -18,6 +18,11 @@ class Settlement
         unsigned short get_settlement_property();
         QString get_settlement_property_name(unsigned short index);
 
+        void set_settlement_x(int);
+        int get_settlement_x();
+        void set_settlement_y(int);
+        int get_settlement_y();
+
         void set_settlement_situation(unsigned short);
         unsigned short get_settlement_situation();
         QString get_settlement_situation_name(unsigned short index);
@@ -33,6 +38,8 @@ class Settlement
         unsigned short _settlement_situation = 0;
         float _SELL_item_local_price[items_amount];
         float _BUY_item_local_price[items_amount];
+        int _x = 200;
+        int _y = 200;
 
         // Значения являются стандартными значениями
         QString _settlement_property_name[settlement_property_amount] = { "Village", "Town", "Mining Village", "Outpost" };
