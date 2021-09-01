@@ -62,7 +62,23 @@ class mainmenu : public QDialog
         void on_coal_button_clicked();
         */
 
-    private:
+        void on_settlement_1_clicked();
+
+        void on_settlement_2_clicked();
+
+        void on_settlement_3_clicked();
+
+        void on_settlement_4_clicked();
+
+        void on_settlement_5_clicked();
+
+        void on_settlement_6_clicked();
+
+        void on_settlement_7_clicked();
+
+        void on_settlement_8_clicked();
+
+private:
         Ui::mainmenu *ui;
 };
 

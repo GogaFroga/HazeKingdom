@@ -1,8 +1,11 @@
 #include<stdlib.h>
 #include<string>
 #include<iostream>
+#include<fstream>
 #include<sstream>
+#include<cmath>
 #include<QWidget>
+#include<QTextStream>
 #include<QObject>
 #include<QCloseEvent>
 #include<QEvent>
@@ -19,6 +22,7 @@ Market market;
 Player player;
 Settlement settlement;
 int index;
+int settlement_number = 0;
 void moveCharacter();
 
 mainmenu::mainmenu(QWidget *parent): QDialog(parent), ui(new Ui::mainmenu)
@@ -114,6 +118,7 @@ void mainmenu::on_gametab3_clicked()
     ui->tabWidget->setEnabled(true);
 }
 
+// info ui
 void mainmenu::setup_all()
 {
     ui->nickname->setFrameStyle(QFrame::Panel | QFrame::Sunken);
@@ -138,9 +143,6 @@ void mainmenu::setup_all()
     ui->classLabel->setText( "Class: " + settlement.get_settlement_property_name(settlement.get_settlement_property()) );
     ui->statusLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
     ui->statusLabel->setText( "Status: " + settlement.get_settlement_situation_name(settlement.get_settlement_situation()) );
-    ui->x_label->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    unsigned int x = settlement.get_settlement_x();
-    ui->x_label->setText( "X: " + QString::number(x) );
 }
 
 /*
@@ -166,15 +168,23 @@ void mainmenu::on_sell_button_clicked()
 
 
 
-//move buttons
-//button1 will make settlement_number = 1
-//button2 will make settlement_number = 2
 
 void mainmenu::on_move_button_clicked()
 {
-    //file read from settlement_number string
-
-    string _string = "0 0 1345 0345 Fist";
+    //read file till settlement_number's string
+    short local_i = 0;
+    QString line = "0 0 1345 0345 Fist";
+    QString FILENAME = "settlement.txt";
+    QFile f(FILENAME);
+    f.open(QIODevice::ReadOnly | QIODevice::Text);
+    QTextStream stream(&f);
+    while (local_i <= settlement_number) // !stream.atEnd() till the end
+    {
+         line = stream.readLine();
+         local_i++;
+    }
+    string _string = line.toStdString();
+    f.close();
 
     //parse the string and make variables
     string substring = _string.substr(0, 1);
@@ -184,8 +194,6 @@ void mainmenu::on_move_button_clicked()
     substring = _string.substr(2, 1);
     qsubstring = QString::fromStdString(substring);
     unsigned int situation = qsubstring.toUInt();
-
-    //int pos = _string.find(" ");
 
     substring = _string.substr(4, 4);
     qsubstring = QString::fromStdString(substring);
@@ -198,13 +206,60 @@ void mainmenu::on_move_button_clicked()
     substring = _string.substr(14);
     QString name = QString::fromStdString(substring);
 
-
     settlement.create_settlement(property, situation, market, name, x, y); //property, situation, market, name, x, y
 
-    //also we take players x y, then we check amount between player and city, and he should to pay gold for move
+    // pay gold for move
+    int p_x = player.get_x_posision();
+    int p_y = player.get_x_posision();
+    int move_price = sqrt( (x-p_x)*(x-p_x) + (y-p_y)*(y-p_y) ) / 20;
+    player.set_money_amount(player.get_money_amount() - move_price);
+    player.set_posision(x, y);
 
+    //ui->x_label->setText( "line: " + line );
     ui->tabWidget->setCurrentIndex(0);
     ui->tabWidget->setTabEnabled(0, true);
     ui->tabWidget->setEnabled(true);
     mainmenu::setup_all();
 }
+
+void mainmenu::on_settlement_1_clicked()
+{
+    settlement_number = 0;
+}
+
+void mainmenu::on_settlement_2_clicked()
+{
+    settlement_number = 1;
+}
+
+void mainmenu::on_settlement_3_clicked()
+{
+    settlement_number = 2;
+}
+
+void mainmenu::on_settlement_4_clicked()
+{
+    settlement_number = 3;
+}
+
+void mainmenu::on_settlement_5_clicked()
+{
+    settlement_number = 4;
+}
+
+void mainmenu::on_settlement_6_clicked()
+{
+    settlement_number = 5;
+}
+
+void mainmenu::on_settlement_7_clicked()
+{
+    settlement_number = 6;
+}
+
+void mainmenu::on_settlement_8_clicked()
+{
+    settlement_number = 7;
+}
+
+//end

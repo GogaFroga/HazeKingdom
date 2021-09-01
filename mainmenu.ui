@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>4</number>
    </property>
    <property name="tabsClosable">
     <bool>true</bool>
@@ -241,7 +241,7 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>1</pointsize>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="text">
@@ -666,7 +666,7 @@
       <string>Depart</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="settlement_1">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -679,7 +679,7 @@
       <string>Forkriv</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="settlement_2">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -692,7 +692,7 @@
       <string>Far Home</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="settlement_3">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -705,7 +705,7 @@
       <string>Center</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="settlement_4">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -718,7 +718,7 @@
       <string>North Harbor</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="settlement_5">
      <property name="geometry">
       <rect>
        <x>190</x>
@@ -731,7 +731,7 @@
       <string>Broken</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_6">
+    <widget class="QPushButton" name="settlement_6">
      <property name="geometry">
       <rect>
        <x>190</x>
@@ -744,7 +744,7 @@
       <string>Light Forest</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_7">
+    <widget class="QPushButton" name="settlement_7">
      <property name="geometry">
       <rect>
        <x>190</x>
@@ -757,7 +757,7 @@
       <string>Deep</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_8">
+    <widget class="QPushButton" name="settlement_8">
      <property name="geometry">
       <rect>
        <x>190</x>

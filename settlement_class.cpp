@@ -70,7 +70,7 @@ int Settlement::get_settlement_y()
     return(Settlement::_y);
 }
 
-QPushButton* Settlement::create_settlement(unsigned short property_index, unsigned short situation_index, class Market market, QString name, int x , int y)
+void Settlement::create_settlement(unsigned short property_index, unsigned short situation_index, class Market market, QString name, int x , int y)
 {
         set_settlement_name(name);
         set_settlement_property(property_index);
@@ -87,13 +87,6 @@ QPushButton* Settlement::create_settlement(unsigned short property_index, unsign
                 _BUY_item_local_price[index] = item_price * _BUY_property_multiplier[index][_settlement_property] *
                         _BUY_situation_multiplier[index][_settlement_situation];
         }
-
-        //Qt
-        QPushButton *settlement_button = new QPushButton();
-        settlement_button->setText(get_settlement_name());
-        settlement_button->move(x, y);
-        settlement_button->setStyleSheet("font: bold; font-size:30px; background: transparent;");
-        return settlement_button;
 }
 
 

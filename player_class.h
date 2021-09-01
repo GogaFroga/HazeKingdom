@@ -26,7 +26,9 @@ class Player
 
         float get_weight_amount();			// GET weight
 
-        int get_posision();					// GET player coordinates
+        int get_x_posision();				// GET player coordinates
+
+        int get_y_posision();				// GET player coordinates
 
         unsigned int get_item_amount(unsigned int);
 

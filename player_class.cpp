@@ -27,7 +27,6 @@ void Player::set_posision(int x, int y)
 {
     Player::_x = x;
     Player::_y = y;
-    // Player::_z = z;
 }
 
 QString Player::get_nickname()
@@ -50,10 +49,16 @@ float Player::get_weight_amount()
     return(_weight);
 }
 
-int Player::get_posision()
+int Player::get_x_posision()
 {
-    return(_x, _y);
+    return(_x);
 }
+
+int Player::get_y_posision()
+{
+    return(_y);
+}
+
 
 unsigned int Player::get_item_amount(unsigned int index)
 {
