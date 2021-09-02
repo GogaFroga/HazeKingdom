@@ -21,7 +21,7 @@ using namespace std;
 Market market;
 Player player;
 Settlement settlement;
-int index;
+unsigned int _index = 0;
 int settlement_number = 0;
 void moveCharacter();
 
@@ -145,33 +145,53 @@ void mainmenu::setup_all()
     ui->statusLabel->setText( "Status: " + settlement.get_settlement_situation_name(settlement.get_settlement_situation()) );
 }
 
-/*
+
 void mainmenu::on_coal_button_clicked()
 {
-    index = 0;
+    _index = 0;
+}
+
+void mainmenu::on_stone_button_clicked()
+{
+    _index = 1;
+}
+
+void mainmenu::on_wood_button_clicked()
+{
+    _index = 2;
+}
+
+void mainmenu::on_wheat_button_clicked()
+{
+    _index = 3;
 }
 
 void mainmenu::on_buy_button_clicked()
 {
     QString amountstr = ui->spinBox_amount->text();
-    int amount = amountstr.toInt();
-    market.buy(index, amount, player);
+    unsigned short amount = amountstr.toInt();
+    int check = market.buy(_index, amount, player);
+    if (check == 0)
+    {
+        ui->tabWidget->setCurrentIndex(0);
+        ui->tabWidget->setTabEnabled(0, true);
+        ui->tabWidget->setEnabled(true);
+        mainmenu::setup_all();
+    }
 }
 
 void mainmenu::on_sell_button_clicked()
 {
     QString amountstr = ui->spinBox_amount->text();
-    int amount = amountstr.toInt();
-    market.buy(index, amount, player);
+    unsigned short amount = amountstr.toInt();
+    market.sell(_index, amount, player);
+    mainmenu::setup_all();
 }
-*/
 
-
-
-
+// depart
 void mainmenu::on_move_button_clicked()
 {
-    //read file till settlement_number's string
+    // read file till settlement_number's string
     short local_i = 0;
     QString line = "0 0 1345 0345 Fist";
     QString FILENAME = "settlement.txt";

@@ -90,7 +90,7 @@ void Settlement::create_settlement(unsigned short property_index, unsigned short
 }
 
 
-void Market::buy(unsigned short index, unsigned short amount, class Player player)
+int Market::buy(unsigned int index, unsigned short amount, class Player player)
 {
         float money = player.get_money_amount();
         float weight = player.get_weight_amount();
@@ -98,13 +98,13 @@ void Market::buy(unsigned short index, unsigned short amount, class Player playe
         if (money >= amount * item_price)
         {
                 money -= amount * item_price;
-                weight += amount * weight;
+                //weight += amount * weight;
                 player.set_money_amount(money);
                 player.set_weight_amount(weight);
                 player.add_item(index, amount);
         }
         else
-                (std::cout << "Нехватает денег!");
+                return(1);
 }
 
 void Market::sell(unsigned short index, unsigned short amount, class Player player)

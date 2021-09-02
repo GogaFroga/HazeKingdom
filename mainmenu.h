@@ -54,13 +54,17 @@ class mainmenu : public QDialog
 
         void on_move_button_clicked();
 
-        /*
         void on_buy_button_clicked();
 
         void on_sell_button_clicked();
 
         void on_coal_button_clicked();
-        */
+
+        void on_stone_button_clicked();
+
+        void on_wood_button_clicked();
+
+        void on_wheat_button_clicked();
 
         void on_settlement_1_clicked();
 

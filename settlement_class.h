@@ -76,7 +76,7 @@ class Settlement
 class Market	// local settlement market
 {
     public:
-        void buy(unsigned short, unsigned short, class Player);			// BUY (item index, item amount)
+        int buy(unsigned int, unsigned short, class Player);			// BUY (item index, item amount)
 
         void sell(unsigned short, unsigned short, class Player);		// SELL (item index, item amount)
 

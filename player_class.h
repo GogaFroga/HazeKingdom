@@ -38,7 +38,7 @@ class Player
 
     private:
         QString _nickname = "defaultPlayer";
-        float _money = 100;
+        float _money = 300;
         float _fame = 0;
         float _weight = 0;
         int _x = 0;
