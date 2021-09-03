@@ -90,36 +90,36 @@ void Settlement::create_settlement(unsigned short property_index, unsigned short
 }
 
 
-int Market::buy(unsigned int index, unsigned short amount, class Player player)
+int Market::buy(unsigned int index, unsigned short amount, class Player *player)
 {
-        float money = player.get_money_amount();
-        float weight = player.get_weight_amount();
+        float money = player->get_money_amount();
+        float weight = player->get_weight_amount();
         float item_price = Market::get_item_deafolt_price(index);
         if (money >= amount * item_price)
         {
                 money -= amount * item_price;
                 //weight += amount * weight;
-                player.set_money_amount(money);
-                player.set_weight_amount(weight);
-                player.add_item(index, amount);
+                player->set_money_amount(money);
+                player->set_weight_amount(weight);
+                player->add_item(index, amount);
         }
         else
                 return(1);
 }
 
-void Market::sell(unsigned short index, unsigned short amount, class Player player)
+void Market::sell(unsigned short index, unsigned short amount, class Player *player)
 {
-        float money = player.get_money_amount();
-        float weight = player.get_weight_amount();
-        //float items_amount = player.get_items_amount();
+        float money = player->get_money_amount();
+        float weight = player->get_weight_amount();
+        unsigned int item_amount = player->get_item_amount(index);
         float item_price = Market::get_item_deafolt_price(index);
-        if (items_amount > amount)
+        if (item_amount >= amount)
         {
                 money += amount * item_price;
                 weight -= amount * weight;
-                player.set_money_amount(money);
-                player.set_weight_amount(weight);
-                player.delete_item(index, amount);
+                player->set_money_amount(money);
+                player->set_weight_amount(weight);
+                player->delete_item(index, amount);
         }
         else
                 (std::cout << "У вас нет этого товара!");

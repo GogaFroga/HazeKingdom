@@ -170,11 +170,11 @@ void mainmenu::on_buy_button_clicked()
 {
     QString amountstr = ui->spinBox_amount->text();
     unsigned short amount = amountstr.toInt();
-    int check = market.buy(_index, amount, player);
+    int check = market.buy(_index, amount, &player);
     if (check == 0)
     {
-        ui->tabWidget->setCurrentIndex(0);
-        ui->tabWidget->setTabEnabled(0, true);
+        ui->tabWidget->setCurrentIndex(1);
+        ui->tabWidget->setTabEnabled(1, true);
         ui->tabWidget->setEnabled(true);
         mainmenu::setup_all();
     }
@@ -184,7 +184,11 @@ void mainmenu::on_sell_button_clicked()
 {
     QString amountstr = ui->spinBox_amount->text();
     unsigned short amount = amountstr.toInt();
-    market.sell(_index, amount, player);
+    market.sell(_index, amount, &player);
+
+    ui->tabWidget->setCurrentIndex(1);
+    ui->tabWidget->setTabEnabled(1, true);
+    ui->tabWidget->setEnabled(true);
     mainmenu::setup_all();
 }
 
