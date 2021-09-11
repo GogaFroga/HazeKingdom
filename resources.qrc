@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/assets">
+        <file>Assets/Mmap.png</file>
+        <file>Assets/settlement.txt</file>
+    </qresource>
+</RCC>

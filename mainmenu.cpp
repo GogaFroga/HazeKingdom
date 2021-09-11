@@ -11,6 +11,9 @@
 #include<QEvent>
 #include<QCoreApplication>
 #include<QKeyEvent>
+#include<QDebug>
+#include<QProcessEnvironment>
+#include<QDir>
 #include"mainmenu.h"
 #include"ui_mainmenu.h"
 #include"settlement_class.h"
@@ -41,9 +44,9 @@ mainmenu::~mainmenu()
 void mainmenu::on_start_clicked()
 {
     player.set_nickname("DragonSlayer");
-    settlement.create_settlement(1, 2, market, "Namea", 10, 10);
+    settlement.create_settlement(0, 3, market, "Far Home", 719, 438);
     setup_all();
-    QString imagename = "Mmap.png";
+    QString imagename = ":/assets/Assets/Mmap.png";
     QImage image(imagename);
     QGraphicsScene* scene = new QGraphicsScene();
     QGraphicsView* view = new QGraphicsView(scene);
@@ -53,7 +56,7 @@ void mainmenu::on_start_clicked()
     ui->tabWidget->removeTab(0);
     scene->addItem(item);
     view->show();
-    //setWindowFlags(Qt::mainmenu|Qt::WindowMinimizeButtonHint|Qt::WindowMaximizeButtonHint);
+    //mainmenu::setWindowFlags(Qt::WindowMinimizeButtonHint|Qt::WindowMaximizeButtonHint);
 }
 
 void mainmenu::on_about_clicked()
@@ -61,7 +64,9 @@ void mainmenu::on_about_clicked()
     if (!ui->rules->isEnabled())
     {
         ui->rules->setEnabled(true);
-        ui->rules->setText("Автор: Вакуленко Артур М8О-111Б\nСуть: Вы перемещаетесь между городами и торгуете.\nБла-бла-бла.");
+        ui->rules->setText("Автор: Вакуленко Артур М8О-111Б\n"
+        "Суть: За каждое перемещение с игрока снимается плата в зависимости от расстояния между ним и городом."
+        "При перемещении в город можно посмотреть ситуацию в нем, купить товар.");
     }
     else if (ui->rules->isEnabled())
     {
@@ -195,10 +200,10 @@ void mainmenu::on_sell_button_clicked()
 // depart
 void mainmenu::on_move_button_clicked()
 {
-    // read file till settlement_number's string
+    // read file until settlement_number's string
     short local_i = 0;
     QString line = "0 0 1345 0345 Fist";
-    QString FILENAME = "settlement.txt";
+    QString FILENAME = ":/assets/Assets/settlement.txt";
     QFile f(FILENAME);
     f.open(QIODevice::ReadOnly | QIODevice::Text);
     QTextStream stream(&f);
@@ -239,9 +244,8 @@ void mainmenu::on_move_button_clicked()
     player.set_money_amount(player.get_money_amount() - move_price);
     player.set_posision(x, y);
 
-    //ui->x_label->setText( "line: " + line );
-    ui->tabWidget->setCurrentIndex(0);
-    ui->tabWidget->setTabEnabled(0, true);
+    ui->tabWidget->setCurrentIndex(1);
+    ui->tabWidget->setTabEnabled(1, true);
     ui->tabWidget->setEnabled(true);
     mainmenu::setup_all();
 }

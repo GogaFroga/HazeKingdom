@@ -45,3 +45,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES += \
     Assets/Wmap — копия.jpg \
     Assets/Wmap.jpg
+
+RESOURCES += \
+    resources.qrc

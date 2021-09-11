@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>4</number>
+    <number>2</number>
    </property>
    <property name="tabsClosable">
     <bool>true</bool>
@@ -225,27 +225,6 @@
      </property>
      <property name="text">
       <string>Depart</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="x_label">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>290</y>
-       <width>700</width>
-       <height>60</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>X:</string>
      </property>
     </widget>
    </widget>
