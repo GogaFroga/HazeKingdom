@@ -80,4 +80,3 @@ int Player::delete_item(unsigned int index, unsigned int amount)
     else
         return(-1);
 }
-

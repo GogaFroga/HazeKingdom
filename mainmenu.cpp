@@ -21,7 +21,6 @@
 
 using namespace std;
 
-Market market;
 Player player;
 Settlement settlement;
 unsigned int _index = 0;
@@ -45,7 +44,7 @@ mainmenu::~mainmenu()
 void mainmenu::on_start_clicked()
 {
     player.set_nickname("DragonSlayer");
-    settlement.create_settlement(0, 3, market, "Far Home", 719, 438);
+    settlement.create_settlement(0, 3, "Far Home", 719, 438);
     setup_all();
 
     QString imagename = ":/assets/Assets/Mmap.png";
@@ -181,7 +180,7 @@ void mainmenu::on_buy_button_clicked()
 {
     QString amountstr = ui->spinBox_amount->text();
     unsigned short amount = amountstr.toInt();
-    int check = market.buy(_index, amount, &player);
+    int check = settlement.buy(_index, amount, &player);
     if (check == 0)
     {
         ui->tabWidget->setCurrentIndex(1);
@@ -195,7 +194,7 @@ void mainmenu::on_sell_button_clicked()
 {
     QString amountstr = ui->spinBox_amount->text();
     unsigned short amount = amountstr.toInt();
-    market.sell(_index, amount, &player);
+    settlement.sell(_index, amount, &player);
 
     ui->tabWidget->setCurrentIndex(1);
     ui->tabWidget->setTabEnabled(1, true);
@@ -241,12 +240,12 @@ void mainmenu::on_move_button_clicked()
     substring = _string.substr(14);
     QString name = QString::fromStdString(substring);
 
-    settlement.create_settlement(property, situation, market, name, x, y); //property, situation, market, name, x, y
+    settlement.create_settlement(property, situation, name, x, y); //property, situation, market, name, x, y
 
     // pay gold for move
     int p_x = player.get_x_posision();
     int p_y = player.get_x_posision();
-    int move_price = sqrt( (x-p_x)*(x-p_x) + (y-p_y)*(y-p_y) ) / 20;
+    int move_price = sqrt( (x-p_x)*(x-p_x) + (y-p_y)*(y-p_y) ) / 50;
     player.set_money_amount(player.get_money_amount() - move_price);
     player.set_posision(x, y);
 
