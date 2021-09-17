@@ -28,9 +28,10 @@ unsigned int _index = 0;
 int settlement_number = 0;
 void moveCharacter();
 
+
 mainmenu::mainmenu(QWidget *parent): QDialog(parent), ui(new Ui::mainmenu)
 {
-    setGeometry(0, 30, 920, 990);
+    setGeometry(500, 30, 0, 0);
     ui->setupUi(this);
     ui->tabWidget->setCurrentIndex(0);
 }
@@ -46,17 +47,21 @@ void mainmenu::on_start_clicked()
     player.set_nickname("DragonSlayer");
     settlement.create_settlement(0, 3, market, "Far Home", 719, 438);
     setup_all();
+
     QString imagename = ":/assets/Assets/Mmap.png";
     QImage image(imagename);
     QGraphicsScene* scene = new QGraphicsScene();
     QGraphicsView* view = new QGraphicsView(scene);
     QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
     view->move(920, 0);
-    view->setGeometry(920, 35, 1000, 990);
-    ui->tabWidget->removeTab(0);
+    view->setGeometry(778, 30, 1142, 1020);
     scene->addItem(item);
     view->show();
-    //mainmenu::setWindowFlags(Qt::WindowMinimizeButtonHint|Qt::WindowMaximizeButtonHint);
+
+    ui->tabWidget->removeTab(0);
+    this->setGeometry(0, 30, 778, 1020);
+    //mainmenu::setWindowFlags(Qt::WindowMaximizeButtonHint);
+    //mainmenu::setWindowModality(Qt::WindowModal);
 }
 
 void mainmenu::on_about_clicked()
@@ -66,7 +71,8 @@ void mainmenu::on_about_clicked()
         ui->rules->setEnabled(true);
         ui->rules->setText("Автор: Вакуленко Артур М8О-111Б\n"
         "Суть: За каждое перемещение с игрока снимается плата в зависимости от расстояния между ним и городом."
-        "При перемещении в город можно посмотреть ситуацию в нем, купить товар.");
+        "\nПри перемещении в город можно посмотреть ситуацию в нем, купить товар."
+        "\n");
     }
     else if (ui->rules->isEnabled())
     {
@@ -288,6 +294,11 @@ void mainmenu::on_settlement_7_clicked()
 void mainmenu::on_settlement_8_clicked()
 {
     settlement_number = 7;
+}
+
+void mainmenu::on_game_exit_clicked()
+{
+    mainmenu::close();
 }
 
 //end

@@ -82,6 +82,8 @@ class mainmenu : public QDialog
 
         void on_settlement_8_clicked();
 
+        void on_game_exit_clicked();
+
 private:
         Ui::mainmenu *ui;
 };
