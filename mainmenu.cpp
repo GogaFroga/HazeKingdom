@@ -68,12 +68,14 @@ void mainmenu::on_about_clicked()
     if (!ui->rules->isEnabled())
     {
         ui->rules->setEnabled(true);
-        ui->rules->setText("Автор: Вакуленко Артур М8О-111Б\n"
-        "Суть: За каждое перемещение с игрока снимается плата в зависимости от расстояния между ним и городом."
-        "\nПри перемещении в город можно посмотреть ситуацию в нем, купить товар."
+        ui->rules->setText("Author: Вакуленко Артур М8О-111Б\n"
+        "The point: "
+        "Player pays some coins for each movement.\n"
+        "An amount of the payment depends on a distance between the player and a settlement.\n"
+        "After the movement, you can check the settlement situation and buy or sell your stuff.\n"
         "\n");
     }
-    else if (ui->rules->isEnabled())
+    else
     {
         ui->rules->setEnabled(false);
         ui->rules->setText("");
@@ -132,27 +134,27 @@ void mainmenu::on_gametab3_clicked()
 void mainmenu::setup_all()
 {
     ui->nickname->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    ui->nickname->setText( "Name: " + player.get_nickname() );
+    ui->nickname->setText( " Name: " + player.get_nickname() );
     ui->money->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    ui->money->setText( "Money: " + QString::number(player.get_money_amount()) ); //td::to_string(player.get_money_amount()
+    ui->money->setText( " Money: " + QString::number(player.get_money_amount()) ); //td::to_string(player.get_money_amount()
     ui->fame->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    ui->fame->setText( "Fame: " + QString::number(player.get_fame_amount()) );
+    ui->fame->setText( " Fame: " + QString::number(player.get_fame_amount()) );
     ui->weight->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    ui->weight->setText( "Weight: " + QString::number(player.get_weight_amount()) );
+    ui->weight->setText( " Weight: " + QString::number(player.get_weight_amount()) );
     ui->coalLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    ui->coalLabel->setText( "Coal: " + QString::number(player.get_item_amount(0)) );
+    ui->coalLabel->setText( " Coal: " + QString::number(player.get_item_amount(0)) );
     ui->stoneLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    ui->stoneLabel->setText( "Stone: " + QString::number(player.get_item_amount(1)) );
+    ui->stoneLabel->setText( " Stone: " + QString::number(player.get_item_amount(1)) );
     ui->woodLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    ui->woodLabel->setText( "Wood: " + QString::number(player.get_item_amount(2)) );
+    ui->woodLabel->setText( " Wood: " + QString::number(player.get_item_amount(2)) );
     ui->wheatLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    ui->wheatLabel->setText( "Wheat: " + QString::number(player.get_item_amount(3)) );
+    ui->wheatLabel->setText( " Wheat: " + QString::number(player.get_item_amount(3)) );
     ui->cityLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    ui->cityLabel->setText( "Settlement: " + settlement.get_settlement_name() );
+    ui->cityLabel->setText( " Settlement: " + settlement.get_settlement_name() );
     ui->classLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    ui->classLabel->setText( "Class: " + settlement.get_settlement_property_name(settlement.get_settlement_property()) );
+    ui->classLabel->setText( " Type: " + settlement.get_settlement_property_name(settlement.get_settlement_property()) );
     ui->statusLabel->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    ui->statusLabel->setText( "Status: " + settlement.get_settlement_situation_name(settlement.get_settlement_situation()) );
+    ui->statusLabel->setText( " Status: " + settlement.get_settlement_situation_name(settlement.get_settlement_situation()) );
 }
 
 
@@ -194,12 +196,14 @@ void mainmenu::on_sell_button_clicked()
 {
     QString amountstr = ui->spinBox_amount->text();
     unsigned short amount = amountstr.toInt();
-    settlement.sell(_index, amount, &player);
-
-    ui->tabWidget->setCurrentIndex(1);
-    ui->tabWidget->setTabEnabled(1, true);
-    ui->tabWidget->setEnabled(true);
-    mainmenu::setup_all();
+    int check = settlement.sell(_index, amount, &player);
+    if (check == 0)
+    {
+        ui->tabWidget->setCurrentIndex(1);
+        ui->tabWidget->setTabEnabled(1, true);
+        ui->tabWidget->setEnabled(true);
+        mainmenu::setup_all();
+    }
 }
 
 // depart

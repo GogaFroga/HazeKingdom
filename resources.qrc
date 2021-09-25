@@ -2,5 +2,11 @@
     <qresource prefix="/assets">
         <file>Assets/Mmap.png</file>
         <file>Assets/settlement.txt</file>
+        <file>Assets/coal_icon.jpg</file>
+        <file>Assets/stone_icon.jpg</file>
+        <file>Assets/wheat_icon.jpg</file>
+        <file>Assets/wood_icon.jpg</file>
+        <file>Assets/paper_background.jpg</file>
+        <file>Assets/white.png</file>
     </qresource>
 </RCC>

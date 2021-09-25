@@ -25,8 +25,11 @@
      <height>1030</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/assets/Assets/paper_background.jpg);</string>
+   </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <property name="tabsClosable">
     <bool>true</bool>
@@ -56,6 +59,10 @@
        <height>80</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 40pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
+     </property>
      <property name="text">
       <string>About</string>
      </property>
@@ -72,6 +79,10 @@
        <height>80</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font:40pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
+     </property>
      <property name="text">
       <string>Start</string>
      </property>
@@ -84,6 +95,10 @@
        <width>200</width>
        <height>80</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 40pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Exit</string>
@@ -107,6 +122,9 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>
@@ -124,14 +142,22 @@
       <rect>
        <x>30</x>
        <y>30</y>
-       <width>170</width>
-       <height>50</height>
+       <width>190</width>
+       <height>70</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Character</string>
@@ -142,14 +168,22 @@
       <rect>
        <x>240</x>
        <y>30</y>
-       <width>170</width>
-       <height>50</height>
+       <width>190</width>
+       <height>70</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Trade</string>
@@ -159,21 +193,55 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>110</y>
+       <y>130</y>
        <width>700</width>
        <height>60</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Settlement:</string>
      </property>
     </widget>
     <widget class="QLabel" name="statusLabel">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>330</y>
+       <width>700</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Deutsch Gothic</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
+     </property>
+     <property name="text">
+      <string>Status:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="classLabel">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -184,26 +252,16 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
-     <property name="text">
-      <string>Status:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="classLabel">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>170</y>
-       <width>700</width>
-       <height>60</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>20</pointsize>
-      </font>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Class:</string>
@@ -214,14 +272,22 @@
       <rect>
        <x>450</x>
        <y>30</y>
-       <width>170</width>
-       <height>50</height>
+       <width>190</width>
+       <height>70</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Depart</string>
@@ -230,9 +296,9 @@
     <widget class="QPushButton" name="game_exit">
      <property name="geometry">
       <rect>
-       <x>720</x>
+       <x>730</x>
        <y>10</y>
-       <width>41</width>
+       <width>31</width>
        <height>28</height>
       </rect>
      </property>
@@ -256,26 +322,42 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>24</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 24pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
+     </property>
      <property name="text">
-      <string>Thats ma text yooo</string>
+      <string>Nickname</string>
      </property>
     </widget>
     <widget class="QPushButton" name="gametab">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>30</y>
+       <y>20</y>
        <width>170</width>
-       <height>50</height>
+       <height>70</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Game</string>
@@ -292,11 +374,19 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>24</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 24pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
+     </property>
      <property name="text">
-      <string>Thats ma text yooo</string>
+      <string>money</string>
      </property>
     </widget>
     <widget class="QLabel" name="fame">
@@ -310,11 +400,19 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>24</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 24pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
+     </property>
      <property name="text">
-      <string>Thats ma text yooo</string>
+      <string>Fame</string>
      </property>
     </widget>
     <widget class="QLabel" name="weight">
@@ -328,11 +426,19 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>24</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 24pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
+     </property>
      <property name="text">
-      <string>Thats ma text yooo</string>
+      <string>Weight</string>
      </property>
     </widget>
     <widget class="QLabel" name="coalLabel">
@@ -346,11 +452,19 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>24</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 24pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
+     </property>
      <property name="text">
-      <string>Thats ma text yooo</string>
+      <string>coal</string>
      </property>
     </widget>
     <widget class="QLabel" name="stoneLabel">
@@ -364,11 +478,20 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>24</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 24pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);
+</string>
+     </property>
      <property name="text">
-      <string>Thats ma text yooo</string>
+      <string>stone</string>
      </property>
     </widget>
     <widget class="QLabel" name="woodLabel">
@@ -382,11 +505,19 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>24</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 24pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
+     </property>
      <property name="text">
-      <string>Thats ma text yooo</string>
+      <string>wood</string>
      </property>
     </widget>
     <widget class="QLabel" name="wheatLabel">
@@ -400,11 +531,19 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>24</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 24pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
+     </property>
      <property name="text">
-      <string>Thats ma text yooo</string>
+      <string>wheat</string>
      </property>
     </widget>
    </widget>
@@ -416,15 +555,23 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>30</y>
+       <y>20</y>
        <width>170</width>
-       <height>50</height>
+       <height>70</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Game</string>
@@ -433,16 +580,25 @@
     <widget class="QPushButton" name="buy_button">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>410</y>
-       <width>170</width>
-       <height>50</height>
+       <x>240</x>
+       <y>809</y>
+       <width>181</width>
+       <height>71</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);
+</string>
      </property>
      <property name="text">
       <string>BUY</string>
@@ -451,16 +607,24 @@
     <widget class="QPushButton" name="sell_button">
      <property name="geometry">
       <rect>
-       <x>500</x>
-       <y>410</y>
-       <width>170</width>
-       <height>50</height>
+       <x>440</x>
+       <y>810</y>
+       <width>181</width>
+       <height>71</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>SELL</string>
@@ -469,16 +633,24 @@
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>140</y>
-       <width>71</width>
-       <height>21</height>
+       <x>230</x>
+       <y>160</y>
+       <width>151</width>
+       <height>61</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Coal</string>
@@ -487,16 +659,24 @@
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>210</y>
-       <width>71</width>
-       <height>21</height>
+       <x>230</x>
+       <y>320</y>
+       <width>151</width>
+       <height>61</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Stone</string>
@@ -505,16 +685,24 @@
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>280</y>
-       <width>71</width>
-       <height>21</height>
+       <x>230</x>
+       <y>480</y>
+       <width>151</width>
+       <height>61</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Wood</string>
@@ -523,16 +711,24 @@
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>350</y>
-       <width>71</width>
-       <height>21</height>
+       <x>230</x>
+       <y>640</y>
+       <width>151</width>
+       <height>61</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Wheat</string>
@@ -541,10 +737,10 @@
     <widget class="QSpinBox" name="spinBox_amount">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>410</y>
-       <width>131</width>
-       <height>51</height>
+       <x>40</x>
+       <y>810</y>
+       <width>181</width>
+       <height>71</height>
       </rect>
      </property>
      <property name="font">
@@ -559,11 +755,14 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>140</y>
-       <width>31</width>
-       <height>28</height>
+       <x>30</x>
+       <y>117</y>
+       <width>150</width>
+       <height>150</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/assets/Assets/coal_icon.jpg);</string>
      </property>
      <property name="text">
       <string/>
@@ -575,11 +774,14 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>210</y>
-       <width>31</width>
-       <height>28</height>
+       <x>30</x>
+       <y>280</y>
+       <width>150</width>
+       <height>150</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/assets/Assets/stone_icon.jpg);</string>
      </property>
      <property name="text">
       <string/>
@@ -591,11 +793,14 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>280</y>
-       <width>31</width>
-       <height>28</height>
+       <x>30</x>
+       <y>440</y>
+       <width>150</width>
+       <height>150</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/assets/Assets/wood_icon.jpg);</string>
      </property>
      <property name="text">
       <string/>
@@ -607,11 +812,14 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>350</y>
-       <width>31</width>
-       <height>28</height>
+       <x>30</x>
+       <y>600</y>
+       <width>150</width>
+       <height>150</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/assets/Assets/wheat_icon.jpg);</string>
      </property>
      <property name="text">
       <string/>
@@ -626,15 +834,23 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>30</y>
+       <y>20</y>
        <width>170</width>
-       <height>50</height>
+       <height>70</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Game</string>
@@ -643,16 +859,24 @@
     <widget class="QPushButton" name="move_button">
      <property name="geometry">
       <rect>
-       <x>430</x>
-       <y>190</y>
-       <width>161</width>
-       <height>61</height>
+       <x>530</x>
+       <y>250</y>
+       <width>170</width>
+       <height>70</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>Deutsch Gothic</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Depart</string>
@@ -661,11 +885,15 @@
     <widget class="QPushButton" name="settlement_1">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>150</y>
-       <width>93</width>
-       <height>28</height>
+       <x>80</x>
+       <y>170</y>
+       <width>181</width>
+       <height>51</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 16pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Forkriv</string>
@@ -674,11 +902,15 @@
     <widget class="QPushButton" name="settlement_2">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>190</y>
-       <width>93</width>
-       <height>28</height>
+       <x>80</x>
+       <y>230</y>
+       <width>181</width>
+       <height>51</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 16pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Far Home</string>
@@ -687,11 +919,15 @@
     <widget class="QPushButton" name="settlement_3">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>230</y>
-       <width>93</width>
-       <height>28</height>
+       <x>80</x>
+       <y>290</y>
+       <width>181</width>
+       <height>51</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 16pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Center</string>
@@ -700,11 +936,15 @@
     <widget class="QPushButton" name="settlement_4">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>270</y>
-       <width>93</width>
-       <height>28</height>
+       <x>80</x>
+       <y>350</y>
+       <width>181</width>
+       <height>51</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 16pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>North Harbor</string>
@@ -713,11 +953,15 @@
     <widget class="QPushButton" name="settlement_5">
      <property name="geometry">
       <rect>
-       <x>190</x>
-       <y>150</y>
-       <width>93</width>
-       <height>28</height>
+       <x>280</x>
+       <y>170</y>
+       <width>181</width>
+       <height>51</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 16pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Broken</string>
@@ -726,11 +970,15 @@
     <widget class="QPushButton" name="settlement_6">
      <property name="geometry">
       <rect>
-       <x>190</x>
-       <y>190</y>
-       <width>93</width>
-       <height>28</height>
+       <x>280</x>
+       <y>230</y>
+       <width>181</width>
+       <height>51</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 16pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Light Forest</string>
@@ -739,11 +987,15 @@
     <widget class="QPushButton" name="settlement_7">
      <property name="geometry">
       <rect>
-       <x>190</x>
-       <y>230</y>
-       <width>93</width>
-       <height>28</height>
+       <x>280</x>
+       <y>290</y>
+       <width>181</width>
+       <height>51</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 16pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Deep</string>
@@ -752,11 +1004,15 @@
     <widget class="QPushButton" name="settlement_8">
      <property name="geometry">
       <rect>
-       <x>190</x>
-       <y>270</y>
-       <width>93</width>
-       <height>28</height>
+       <x>280</x>
+       <y>350</y>
+       <width>181</width>
+       <height>51</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 16pt &quot;Deutsch Gothic&quot;;
+background-image: url(:/assets/Assets/white.png);</string>
      </property>
      <property name="text">
       <string>Eye Lake</string>

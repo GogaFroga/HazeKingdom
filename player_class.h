@@ -18,19 +18,19 @@ class Player
 
         void set_posision(int, int);		// SET player coordinates
 
-        QString get_nickname();             // GET nickname
+        QString get_nickname() const;             // GET nickname
 
-        float get_money_amount();			// GET money
+        float get_money_amount() const;			// GET money
 
-        float get_fame_amount();			// GET money
+        float get_fame_amount() const;			// GET money
 
-        float get_weight_amount();			// GET weight
+        float get_weight_amount() const;			// GET weight
 
-        int get_x_posision();				// GET player coordinates
+        int get_x_posision() const;				// GET player coordinates
 
-        int get_y_posision();				// GET player coordinates
+        int get_y_posision() const;				// GET player coordinates
 
-        unsigned int get_item_amount(unsigned int);
+        unsigned int get_item_amount(unsigned int) const;
 
         int add_item(unsigned int, unsigned int);			// ADD item
 

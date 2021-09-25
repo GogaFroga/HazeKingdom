@@ -12,28 +12,28 @@ class Settlement
 {
     public:
         void set_settlement_name(QString);
-        QString get_settlement_name();
+        QString get_settlement_name() const;
 
         void set_settlement_property(unsigned short);
-        unsigned short get_settlement_property();
-        QString get_settlement_property_name(unsigned short index);
+        unsigned short get_settlement_property() const;
+        QString get_settlement_property_name(unsigned short index) const;
 
         void set_settlement_x(int);
-        int get_settlement_x();
+        int get_settlement_x() const;
         void set_settlement_y(int);
-        int get_settlement_y();
+        int get_settlement_y() const;
 
         void set_settlement_situation(unsigned short);
-        unsigned short get_settlement_situation();
-        QString get_settlement_situation_name(unsigned short index);
-        QString get_settlement_situation_text(unsigned short index);
+        unsigned short get_settlement_situation() const;
+        QString get_settlement_situation_name(unsigned short index) const;
+        QString get_settlement_situation_text(unsigned short index) const;
 
         int buy(unsigned int, unsigned short, class Player*);			// BUY (item index, item amount)
-        void sell(unsigned short, unsigned short, class Player*);		// SELL (item index, item amount)
+        int sell(unsigned short, unsigned short, class Player*);		// SELL (item index, item amount)
 
-        std::string get_item_name(unsigned short);		// GET item name by index
-        float get_item_default_price(unsigned short);	// GET default price by index
-        float get_item_weight(unsigned short);			// GET weight by index
+        std::string get_item_name(unsigned short) const ;		// GET item name by index
+        float get_item_default_price(unsigned short) const;     // GET default price by index
+        float get_item_weight(unsigned short) const;			// GET weight by index
 
         void create_settlement(unsigned short, unsigned short, QString, int, int); // create (property, situation, name, x, y)
 
